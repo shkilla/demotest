@@ -1,0 +1,15 @@
+dataGridView1.DataError += new DataGridViewDataErrorEventHandler(DataGridView1_DataError);
+Form2 form2 = new Form2();
+form2.Show();
+form2.Hide();
+
+
+if(e.Exception != null &&
+    e.Context == DataGridViewDataErrorContexts.Commit)
+{
+    MessageBox.Show("Не верный формат!");
+}
+
+
+this.Hide();
+Application.OpenForms[1].Show();
